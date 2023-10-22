@@ -1,4 +1,9 @@
-# This is my End to End ML Project
+# End to End ML Project
+
+### Create a project folder
+```bash
+mkdir <"project folder name">
+```
 
 ### Initialise git
 ```bash
