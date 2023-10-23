@@ -30,11 +30,11 @@ for filepath in list_of_files:
     filepath = Path(filepath)
     filedir, filename = os.path.split(filepath)
 
-    """ how exist_ok works:if "directory" already exists, 
-    os.makedirs() will not raise an error, and it will do nothing. 
+    '''
+    how exist_ok works:if "directory" already exists,
+    os.makedirs() will not raise an error, and it will do nothing.
     If "my_directory" doesn't exist, it will create the directory.
-    """
-
+    '''
     if filedir != "":
         os.makedirs(filedir, exist_ok=True)
 
@@ -42,7 +42,7 @@ for filepath in list_of_files:
         with open(filepath, "w") as f:
             pass
     else:
-        print("{} already exists".format(filename))
+        print("File {} already exists".format(filename))
 
 
 # here will use the file handling
