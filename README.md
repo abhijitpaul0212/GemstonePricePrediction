@@ -25,7 +25,15 @@ git commit -m <"commit message">
 git push -u origin <"branch name">
 ```
 
-### Run init_setup.sh
+### Run init_setup.sh to setup development environment
 ```bash
 bash <'filename'>.sh
 ```
+
+### Run setup.py to install local package
+```bash
+python setup.py install
+```
+![installed project as local package](image.png)
+
+

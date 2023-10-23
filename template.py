@@ -31,7 +31,7 @@ for filepath in list_of_files:
     filedir, filename = os.path.split(filepath)
 
     '''
-    how exist_ok works:if "directory" already exists,
+    how exist_ok works: if "directory" already exists,
     os.makedirs() will not raise an error, and it will do nothing.
     If "my_directory" doesn't exist, it will create the directory.
     '''
