@@ -29,11 +29,20 @@ git push -u origin <"branch name">
 ```bash
 bash <'filename'>.sh
 ```
-
-### Run setup.py to install local package
+### Ways to install project as local package
+#### 1. using setup.py
 ```bash
 python setup.py install
 ```
+#### 2. having '-e .' in requirement.txt 
+```bash
+pip install -r requirement.txt
+```
+
 ![installed project as local package](image.png)
+
+
+
+
 
 
