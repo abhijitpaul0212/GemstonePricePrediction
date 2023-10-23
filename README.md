@@ -24,3 +24,8 @@ git commit -m <"commit message">
 ```bash
 git push -u origin <"branch name">
 ```
+
+### Run init_setup.sh
+```bash
+bash <'filename'>.sh
+```
