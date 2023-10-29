@@ -14,10 +14,16 @@ from src.GemstonePricePrediction.utils.utils import evaluate_model
 
 @dataclass
 class ModelTrainerConfig:
+    """
+    This is configuration class for Model Trainer
+    """
     trained_model_file_path = os.path.join('artifacts', 'model.pkl')
 
 
 class ModelTrainer:
+    """
+    This class handles Model Training
+    """
     def __init__(self):
         self.model_trainer_config = ModelTrainerConfig()
     

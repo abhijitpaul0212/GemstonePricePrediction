@@ -19,14 +19,20 @@ from src.GemstonePricePrediction.utils.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
+    """
+    This is configuration class for Data Transformation
+    """
     preprocessor_obj_file_path: str = os.path.join('artifacts', 'preprocessor.pkl')
 
 
 class DataTransformation:
+    """
+    This class handles Data Transformation
+    """
     def __init__(self):
         self.data_transformation_config = DataTransformationConfig()
 
-    def get_data_transformation(self):
+    def transform_data(self):
         try:
             logging.info('Data Transformation initiated')
             
@@ -67,19 +73,17 @@ class DataTransformation:
         
         except Exception as e:
             logging.info("Exception occured in the initiate_datatransformation")
-
             raise CustomException(e, sys)
             
-    def initialize_data_transformation(self, train_path, test_path):
+    def initiate_data_transformation(self, train_path, test_path):
         try:
             train_df = pd.read_csv(train_path)
             test_df = pd.read_csv(test_path)
-            
-            logging.info("read train and test data complete")
+
             logging.info(f'Train Dataframe Head : \n{train_df.head().to_string()}')
             logging.info(f'Test Dataframe Head : \n{test_df.head().to_string()}')
             
-            preprocessing_obj = self.get_data_transformation()
+            preprocessing_obj = self.transform_data()
             
             target_column_name = 'price'
             drop_columns = [target_column_name, 'id']
@@ -93,8 +97,9 @@ class DataTransformation:
             input_feature_train_arr = preprocessing_obj.fit_transform(input_feature_train_df)
             input_feature_test_arr = preprocessing_obj.transform(input_feature_test_df)
             
-            logging.info("Applying preprocessing object on training and testing datasets.")
+            logging.info("Applying preprocessing object on training and testing datasets")
             
+            # Using numpy.C_ to concatenate transformed features with target feature
             train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)]
             test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
 
