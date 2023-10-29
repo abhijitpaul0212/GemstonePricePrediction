@@ -18,7 +18,6 @@
 * Z	- Height of the gemstone in mm.
 
 
-
 ### Create a project folder
 ```bash
 mkdir <"project folder name">
