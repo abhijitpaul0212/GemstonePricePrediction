@@ -5,7 +5,7 @@ import os
 from datetime import datetime
 
 # Log filename: date--hr--mm-ss.log
-LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
+LOG_FILE = f"{datetime.now().strftime('%d_%m_%Y_%H_%M_%S')}.log"
 
 LOG_PATH = os.path.join(os.getcwd(), "logs")
 
