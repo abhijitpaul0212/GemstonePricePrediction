@@ -43,6 +43,11 @@ pip install -r requirement.txt
 
 
 
+## Artifacts
+Outputs of all the components:
+I/P --> Raw data --> Data Ingestion --> O/P Train|Test data split
+I/P --> Data Transformation --> O/P Processed data
+
 
 
 

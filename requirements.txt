@@ -3,4 +3,4 @@ numpy
 scikit-learn
 ipykernel
 seaborn
-# -e .
+-e .

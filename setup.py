@@ -17,7 +17,7 @@ def get_requirements(file_path: str) -> List[str]:
 
 
 setup(
-    name="DiamondPricePrediction",
+    name="GemstonePricePrediction",
     version="0.0.1",
     author="Abhijit Paul",
     author_email="abhijitpaul0212@gmail.com",
