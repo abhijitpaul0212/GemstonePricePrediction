@@ -22,13 +22,14 @@ def save_object(file_path, obj):
     except Exception as e:
         raise CustomException(e, sys)
    
-
-def evaluate_model(X_train, y_train, X_test, y_test, models):
+   
+def evaluate_model(X_train, y_train, X_test, y_test, models: dict) -> dict:
     try:
         report = {}
-        for i in range(len(models)):
-            model = list(models.values())[i]
-            
+        
+        for key in models:
+            model = models.get(key)
+
             # Train model
             model.fit(X_train, y_train)
 
@@ -39,7 +40,7 @@ def evaluate_model(X_train, y_train, X_test, y_test, models):
             # train_model_score = r2_score(ytrain,y_train_pred)
             test_model_score = r2_score(y_test, y_test_pred)
 
-            report[list(models.keys())[i]] = test_model_score
+            report[key] = test_model_score
 
         return report
 
