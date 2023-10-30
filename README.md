@@ -1,4 +1,4 @@
-# Gemstone Price Prediction - End to End ML Project
+# Gemstone Price Prediction
 
 ## Problem Statement
 
