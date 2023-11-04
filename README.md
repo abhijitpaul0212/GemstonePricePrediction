@@ -59,13 +59,23 @@ pip install -r requirement.txt
 
 ![installed project as local package](image.png)
 
-
+## Acivate environment
+source activate ./env
 
 ## Artifacts
 Outputs of all the components:
 I/P --> Raw data --> Data Ingestion --> O/P Train|Test data split
 I/P --> Data Transformation --> O/P Processed data
 
+## Pipelines
+### Training Pipeline
+    * Data Ingestion (fetched data from source)
+    * Data Transformation (Feature Engineering, Data Preprocessing)
+    * Model Builing (Create a model using the processed data)
 
+### Prediction Pipeline
+    * Two types of prediction pipeline
+        * Single record prediction
+        * Batch prediction
 
 
