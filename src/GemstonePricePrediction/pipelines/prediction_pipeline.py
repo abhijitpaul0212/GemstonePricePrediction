@@ -3,18 +3,19 @@
 import os
 import sys
 import pandas as pd
+from dataclasses import dataclass
 
 from src.GemstonePricePrediction.logger import logging
 from src.GemstonePricePrediction.exception import CustomException
 from src.GemstonePricePrediction.utils.utils import load_object
 
 
+@dataclass
 class PredictPipeline:
-    def __init__(self) -> None:
-        pass
 
     def predict(self, features):
         try:
+            logging.info('Prediction Pipeline initiated')
             preprocessor_path = os.path.join("artifacts", "preprocessor.pkl")
             model_path = os.path.join("artifacts", "model.pkl")
 
@@ -25,7 +26,8 @@ class PredictPipeline:
             scaled_data = preprocessor.transform(features)
 
             pred = model.predict(scaled_data)
-
+            logging.info('Predicted value: {}'.format(pred))
+            
             return pred
 
         except Exception as e:
@@ -53,7 +55,6 @@ class CustomData:
         self.cut = cut
         self.color = color
         self.clarity = clarity
-            
                 
     def get_data_as_dataframe(self):
         try:
@@ -69,7 +70,7 @@ class CustomData:
                 'clarity': [self.clarity]
             }
             df = pd.DataFrame(custom_data_input_dict)
-            logging.info('Dataframe Gathered')
+            logging.info('Custom input is converted to Dataframe: \n{}'.format(df.head()))
             return df
         except Exception as e:
             logging.info('Exception Occured in prediction pipeline')

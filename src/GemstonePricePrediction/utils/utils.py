@@ -3,11 +3,17 @@
 import os
 import sys
 import pickle
+import pandas as pd
+from pathlib import Path
 
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 
 from src.GemstonePricePrediction.logger import logging
 from src.GemstonePricePrediction.exception import CustomException
+
+
+def load_dataframe(path: str, filename: str):
+    return pd.read_csv(Path(os.path.join(path, filename)))
 
 
 def save_object(file_path, obj):
@@ -18,6 +24,7 @@ def save_object(file_path, obj):
 
         with open(file_path, "wb") as file_obj:
             pickle.dump(obj, file_obj)
+        logging.info("Object is saved at {}".format(file_path))
 
     except Exception as e:
         logging.info('Exception occured while saving object')
@@ -29,6 +36,7 @@ def evaluate_model(X_train, y_train, X_test, y_test, models: dict) -> dict:
         report = {}
         
         for key in models:
+            logging.info("{} model is getting evaluated".format(key))
             model = models.get(key)
 
             # Train model
@@ -53,6 +61,7 @@ def evaluate_model(X_train, y_train, X_test, y_test, models: dict) -> dict:
 def load_object(file_path):
     try:
         with open(file_path, 'rb') as file_obj:
+            logging.info("Object read and loaded from {}".format(file_path))
             return pickle.load(file_obj)
         
     except Exception as e:

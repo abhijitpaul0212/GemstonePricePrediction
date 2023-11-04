@@ -4,5 +4,5 @@ scikit-learn
 ipykernel
 seaborn
 flask
-
+streamlit 
 -e .

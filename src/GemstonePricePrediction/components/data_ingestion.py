@@ -10,7 +10,7 @@ from pathlib import Path  # Handles naming of both LinuxPath and WindowsPath
 
 from src.GemstonePricePrediction.logger import logging
 from src.GemstonePricePrediction.exception import CustomException
-
+from src.GemstonePricePrediction.utils.utils import load_dataframe
 
 @dataclass
 class DataIngestionConfig:
@@ -33,7 +33,7 @@ class DataIngestion:
         logging.info("Data ingestion started")
        
         try:
-            data = pd.read_csv(Path(os.path.join("notebooks/data", "gemstone.csv")))
+            data = load_dataframe("notebooks/data", "gemstone.csv")
             logging.info("Dataset loaded into dataframe")
 
             os.makedirs(os.path.dirname(os.path.join(self.ingestion_config.raw_data_path)), exist_ok=True)
