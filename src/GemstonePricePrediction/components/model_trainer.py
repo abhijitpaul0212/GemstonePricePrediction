@@ -10,6 +10,7 @@ from src.GemstonePricePrediction.logger import logging
 from src.GemstonePricePrediction.exception import CustomException
 from src.GemstonePricePrediction.utils.utils import save_object
 from src.GemstonePricePrediction.utils.utils import evaluate_model
+from explainerdashboard import RegressionExplainer, ExplainerDashboard
 
 
 @dataclass
@@ -18,6 +19,8 @@ class ModelTrainerConfig:
     This is configuration class for Model Trainer
     """
     trained_model_file_path = os.path.join('artifacts', 'model.pkl')
+    dashboard_file_path = os.path.join('artifacts', 'dashboard.yaml')
+    explainer_file = os.path.join('explainer.joblib')
 
 
 class ModelTrainer:
@@ -31,10 +34,10 @@ class ModelTrainer:
         try:
             logging.info('Splitting Dependent and Independent variables from train and test data')
             X_train, y_train, X_test, y_test = (
-                train_array[:, :-1],
-                train_array[:, -1],
-                test_array[:, :-1],
-                test_array[:, -1]
+                train_array.iloc[:, :-1],
+                train_array.iloc[:, -1],
+                test_array.iloc[:, :-1],
+                test_array.iloc[:, -1]
             )
 
             models = {
@@ -61,6 +64,13 @@ class ModelTrainer:
             print(f'Best Model Found , Model Name : {best_model_name} , R2 Score : {best_model_score}')
             print('\n====================================================================================\n')
             logging.info(f'Best Model Found , Model Name : {best_model_name} , R2 Score : {best_model_score}')
+            
+            explainer = RegressionExplainer(best_model, X_test, y_test)
+            db = ExplainerDashboard(explainer, title="Gemstone Explainer Dashboard", shap_interaction=False)
+            db.to_yaml(
+                self.model_trainer_config.dashboard_file_path, 
+                explainerfile=self.model_trainer_config.explainer_file,
+                dump_explainer=True)
 
             save_object(
                  file_path=self.model_trainer_config.trained_model_file_path,

@@ -1,9 +1,14 @@
 # app.py
 import streamlit as st
-import matplotlib.pyplot as plt
 import pandas as pd
+import os
+
 from src.GemstonePricePrediction.pipelines.prediction_pipeline import PredictPipeline, CustomData
-from src.GemstonePricePrediction.utils.utils import load_dataframe
+from src.GemstonePricePrediction.utils.utils import load_dataframe, load_object
+
+
+data = load_dataframe("notebooks/data", "gemstone.csv")
+data.drop(['price'], axis=1, inplace=True)
 
 st.write("""
 # Gemstone Price Prediction App
@@ -16,8 +21,8 @@ st.write('---')
 # Header of Specify Input Parameters
 st.sidebar.header('Specify Input Parameters')
 
-def user_input_features():
-    data = load_dataframe("notebooks/data", "gemstone.csv")
+def user_input_features(data):
+    # data = load_dataframe("notebooks/data", "gemstone.csv")
     CARAT = st.sidebar.slider('CARAT', data.carat.min(), data.carat.max(), data.carat.mean())
     DEPTH = st.sidebar.slider('DEPTH', data.depth.min(), data.depth.max(), data.depth.mean())
     TABLE = st.sidebar.slider('TABLE', data.table.min(), data.table.max(), data.table.mean())
@@ -41,7 +46,7 @@ def user_input_features():
     return features
 
 
-df = user_input_features()
+df = user_input_features(data)
 
 # Main Panel
 
