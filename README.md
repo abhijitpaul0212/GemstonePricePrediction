@@ -78,7 +78,17 @@ I/P --> Data Transformation --> O/P Processed data
         * Single record prediction
         * Batch prediction
 
-## Deployed Links
+## Flask App
+```bash
+python app.py
+```
+
+## Streamlit App
+```bash
+streamlit run streamlit_app.py
+```
+
+## Cloud Deployed Links
 * https://gemstonepriceprediction.streamlit.app/
   
 
