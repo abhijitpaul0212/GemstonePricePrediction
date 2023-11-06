@@ -79,3 +79,17 @@ I/P --> Data Transformation --> O/P Processed data
         * Batch prediction
 
 
+## Explainer Dashboard
+
+* Feature Importance
+* Regression Stats
+* Individual Predictions
+* What if?
+* Feature Dependence
+
+```bash
+python dashboard.py
+```
+
+![Alt text](image-1.png)
+
