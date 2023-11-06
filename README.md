@@ -49,19 +49,6 @@ pip install -r requirement.txt
         * Single record prediction
         * Batch prediction
 
-## Flask App
-```bash
-python app.py
-```
-
-## Streamlit App
-```bash
-streamlit run streamlit_app.py
-```
-
-## Cloud Deployed Links
-* https://gemstonepriceprediction.streamlit.app/
-  
 
 ## Explainer Dashboard
 
@@ -75,3 +62,21 @@ streamlit run streamlit_app.py
 python dashboard.py
 ```
 
+
+## Flask App
+```bash
+python app.py
+```
+
+## Streamlit App
+```bash
+streamlit run streamlit_app.py
+```
+
+## Deployment of DockerImage on AWS
+* AWS - ECR
+* AWS - AppRunner
+
+## Cloud Deployed Links
+* https://gemstonepriceprediction.streamlit.app/
+* https://g3smncimby.us-east-1.awsapprunner.com/
