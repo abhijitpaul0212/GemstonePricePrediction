@@ -2,6 +2,7 @@
 
 from flask import Flask, request, render_template, jsonify
 from src.GemstonePricePrediction.pipelines.prediction_pipeline import PredictPipeline, CustomData
+from src.GemstonePricePrediction.components.model_trainer import ModelTrainer
 
 app = Flask(__name__)
 
@@ -33,7 +34,8 @@ def predict_datapoint():
         predict_pipeline = PredictPipeline()
         pred = predict_pipeline.predict(final_data)
         result = round(pred[0], 2)
-        return render_template("result.html", final_result=result)
+
+        return render_template("result.html", final_result=result, model_score=round(ModelTrainer().show_model_score()*100, 2))
     
 
 if __name__ == "__main__":

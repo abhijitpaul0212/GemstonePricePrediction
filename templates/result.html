@@ -1,1 +1,20 @@
-<h1>GemStone Price will be {{final_result}}</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Prediction Dashboard</title>
+</head>
+<body>
+    <h1>GemStone Price will be {{final_result}}</h1>
+    <br>
+    <h3>R2 Score: {{model_score}}%</h3>
+    <div>
+        Want to predict again?     
+        <a href="{{url_for('predict_datapoint')}}">
+            CLICK HERE
+        </a>
+    </div>
+
+</body>
+</html>
