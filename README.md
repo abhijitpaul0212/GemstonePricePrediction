@@ -57,8 +57,6 @@ python setup.py install
 pip install -r requirement.txt
 ```
 
-![installed project as local package](image.png)
-
 ## Acivate environment
 source activate ./env
 
@@ -103,6 +101,4 @@ streamlit run streamlit_app.py
 ```bash
 python dashboard.py
 ```
-
-![Alt text](image-1.png)
 
