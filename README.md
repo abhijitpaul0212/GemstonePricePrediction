@@ -62,7 +62,6 @@ pip install -r requirement.txt
 python dashboard.py
 ```
 
-
 ## Flask App
 ```bash
 python app.py
