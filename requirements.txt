@@ -5,4 +5,5 @@ ipykernel
 seaborn
 flask
 streamlit 
+explainerdashboard
 -e .
