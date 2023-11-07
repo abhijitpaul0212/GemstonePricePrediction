@@ -79,3 +79,8 @@ streamlit run streamlit_app.py
 ## Cloud Deployed Links
 * https://gemstonepriceprediction.streamlit.app/
 * https://g3smncimby.us-east-1.awsapprunner.com/
+
+
+## Dataset Link
+* https://www.kaggle.com/datasets/colearninglounge/gemstone-price-prediction
+* https://raw.githubusercontent.com/abhijitpaul0212/DataSets/main/gemstone.csv
