@@ -44,6 +44,21 @@ pip install -r requirement.txt
     * Data Transformation (Feature Engineering, Data Preprocessing)
     * Model Builing (Create a model using the processed data)
 
+## MLFlow & DagsHub
+Copy the values from DagsHub > Repo > Remote > Experiments
+
+```bash
+set MLFLOW_TRACKING_URI=<>
+set MLFLOW_TRACKING_USERNAME=<>
+set MLFLOW_TRACKING_PASSWORD<>
+```
+If the above are not set, then ML Experiments gets registered in local system else gets published to DagsHub
+
+#### Command to train the pipeline
+```bash
+python src\GemstonePricePrediction\pipelines\training_pipeline.py
+```
+
 ### Prediction Pipeline
     * Two types of prediction pipeline
         * Single record prediction

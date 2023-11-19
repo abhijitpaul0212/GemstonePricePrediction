@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/abpaul/Documents/Learnings/iNeuron/MLProjects/GemstonePricePrediction/mlruns/0/e596f8e49a6b44c39d25b821c90590ca/artifacts
+end_time: 1700381583996
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e596f8e49a6b44c39d25b821c90590ca
+run_name: funny-lamb-700
+run_uuid: e596f8e49a6b44c39d25b821c90590ca
+start_time: 1700381579289
+status: 3
+user_id: abpaul
+tags: []
+source_type: 4
+source_name: ''
+entry_point_name: ''
+source_version: ''

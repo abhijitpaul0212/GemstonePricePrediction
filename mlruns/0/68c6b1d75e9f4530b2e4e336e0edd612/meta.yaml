@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/abpaul/Documents/Learnings/iNeuron/MLProjects/GemstonePricePrediction/mlruns/0/68c6b1d75e9f4530b2e4e336e0edd612/artifacts
+end_time: 1700389180773
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 68c6b1d75e9f4530b2e4e336e0edd612
+run_name: abrasive-frog-952
+run_uuid: 68c6b1d75e9f4530b2e4e336e0edd612
+start_time: 1700389175251
+status: 3
+user_id: abpaul
+tags: []
+source_type: 4
+source_name: ''
+entry_point_name: ''
+source_version: ''

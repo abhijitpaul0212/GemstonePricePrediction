@@ -12,6 +12,7 @@ from src.GemstonePricePrediction.logger import logging
 from src.GemstonePricePrediction.exception import CustomException
 from src.GemstonePricePrediction.utils.utils import load_dataframe
 
+
 @dataclass
 class DataIngestionConfig:
     """
@@ -57,4 +58,4 @@ class DataIngestion:
      
         except Exception as e:
             logging.info("exception during occured at data ingestion stage")
-            raise CustomException(e, sys)
+            raise CustomException(e, sys)  # type: ignore

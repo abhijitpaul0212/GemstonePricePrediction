@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/abpaul/Documents/Learnings/iNeuron/MLProjects/GemstonePricePrediction/mlruns/0/385b51ccb8444a008c4377014ed9bf89/artifacts
+end_time: 1700381524935
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 385b51ccb8444a008c4377014ed9bf89
+run_name: bustling-cub-607
+run_uuid: 385b51ccb8444a008c4377014ed9bf89
+start_time: 1700381519164
+status: 3
+user_id: abpaul
+tags: []
+source_type: 4
+source_name: ''
+entry_point_name: ''
+source_version: ''

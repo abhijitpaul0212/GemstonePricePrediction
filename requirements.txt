@@ -6,4 +6,6 @@ seaborn
 flask
 streamlit 
 explainerdashboard
+mlflow
+dvc
 -e .

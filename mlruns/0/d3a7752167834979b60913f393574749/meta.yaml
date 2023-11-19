@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/abpaul/Documents/Learnings/iNeuron/MLProjects/GemstonePricePrediction/mlruns/0/d3a7752167834979b60913f393574749/artifacts
+end_time: 1700389938123
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d3a7752167834979b60913f393574749
+run_name: stylish-owl-464
+run_uuid: d3a7752167834979b60913f393574749
+start_time: 1700389932383
+status: 3
+user_id: abpaul
+tags: []
+source_type: 4
+source_name: ''
+entry_point_name: ''
+source_version: ''

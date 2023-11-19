@@ -73,7 +73,7 @@ class DataTransformation:
         
         except Exception as e:
             logging.info("Exception occured in the initiate_datatransformation")
-            raise CustomException(e, sys)
+            raise CustomException(e, sys)   # type: ignore
             
     def initiate_data_transformation(self, train_path, test_path):
         try:
@@ -100,7 +100,6 @@ class DataTransformation:
             input_feature_train_arr_df = pd.DataFrame(input_feature_train_arr, columns=input_feature_train_df.columns)
             input_feature_test_arr_df = pd.DataFrame(input_feature_test_arr, columns=input_feature_test_df.columns)
 
-            
             logging.info("Applying preprocessing object on training and testing datasets")
             
             # Using numpy.C_ to concatenate transformed features with target feature
@@ -125,4 +124,4 @@ class DataTransformation:
         except Exception as e:
             logging.info("Exception occured in the initiate_datatransformation")
 
-            raise CustomException(e, sys)
+            raise CustomException(e, sys)   # type: ignore

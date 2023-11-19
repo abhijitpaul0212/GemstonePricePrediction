@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/abpaul/Documents/Learnings/iNeuron/MLProjects/GemstonePricePrediction/mlruns/0/716ba66c871c49efa5cc5aa5937468d4/artifacts
+end_time: 1700384222928
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 716ba66c871c49efa5cc5aa5937468d4
+run_name: mercurial-koi-248
+run_uuid: 716ba66c871c49efa5cc5aa5937468d4
+start_time: 1700384218252
+status: 3
+user_id: abpaul
+tags: []
+source_type: 4
+source_name: ''
+entry_point_name: ''
+source_version: ''
